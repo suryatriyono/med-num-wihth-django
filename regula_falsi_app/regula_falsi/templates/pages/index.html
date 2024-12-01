@@ -1,0 +1,28 @@
+{% extends "base.html" %} 
+{% block title %} Metode Regyla Falsi {% endblock %}
+{% block content%} 
+  {% include 'components/form.html' %} 
+  {% if error_message %}
+    <div class="bg-red-100 text-red-700 p-4 mb-4 rounded">{{ error_message }}</div>
+  {% endif %} 
+  {% include 'components/table.html' %} 
+  {% if plot_div %}
+  <div class="mt-6">
+    <h2 class="text-xl font-semibold mb-4">Grafik Konvergensi:</h2>
+    <div>{{ plot_div|safe }}</div>
+  </div>
+  {% endif %} 
+{% endblock%} {% comment %} {% extends "base.html" %} {% block title
+%} Metode Regyla Falsi {% endblock %} {% block content%} {% include
+'components/form.html' %} {% if error_message %}
+<div class="bg-red-100 text-red-700 p-4 mb-4 rounded">{{ error_message }}</div>
+{% endif %} {% include 'components/table.html' %} {% if graph_url %}
+<div class="mt-6">
+  <h2 class="text-xl font-semibold mb-4">Grafik Konvergensi:</h2>
+  <img
+    src="{{ graph_url }}"
+    alt="Grafik Konvergensi Metode Regula Falsi"
+    class="w-full h-auto rounded shadow-md"
+  />
+</div>
+{% endif %} {% endblock%} {% endcomment %}

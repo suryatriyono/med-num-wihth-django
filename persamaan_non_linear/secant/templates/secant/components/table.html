@@ -1,0 +1,25 @@
+{% if result %}
+<div class="flex justify-center flex-col items-center">
+  <h2 class="text-xl font-bold mb-4 uppercase text-center">Hasil Iterasi</h2>
+  <table class="table-auto w-full bg-white shadow-md rounded">
+    <thead>
+      <tr class="bg-purple-600 text-white font-bold">
+        <th class="px-4 py-2">Iterasi</th>
+        <th class="px-4 py-2">x</th>
+        <th class="px-4 py-2">f(x)</th>
+        <th class="px-4 py-2">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in result %}
+      <tr class="text-center">
+        <td class="border px-4 py-2">{{ row.iteration }}</td>
+        <td class="border px-4 py-2">{{ row.x0 }}</td>
+        <td class="border px-4 py-2">{{ row.f_x0 }}</td>
+        <td class="border px-4 py-2 {% if row.status == 'Berhenti' %}bg-purple-600 text-white font-semibold{% endif %}">{{ row.status }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}

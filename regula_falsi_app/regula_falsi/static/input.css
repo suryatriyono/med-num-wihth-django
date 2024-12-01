@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Perintah untuk Membangun CSS */
+/* npx tailwindcss -i ./regula_falsi/static/input.css -o ./regula_falsi/static/output.css --watch */

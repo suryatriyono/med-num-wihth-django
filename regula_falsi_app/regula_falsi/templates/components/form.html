@@ -1,0 +1,87 @@
+<form
+  method="post"
+  class="mb-6"
+>
+  {% csrf_token %}
+  <!-- Token keamanan untuk mencegah serangan CSRF -->
+  <div class="grid grid-cols-2 gap-4 mb-4">
+    <div>
+      <label
+        for="a"
+        class="block text-sm font-medium text-gray-700"
+        >Batas Bawah (a)</label
+      >
+      <input
+        type="text"
+        name="a"
+        id="a"
+        class="mt-1 p-2 border w-full rounded"
+      />
+      <!-- Input untuk batas bawah -->
+    </div>
+    <div>
+      <label
+        for="b"
+        class="block text-sm font-medium text-gray-700"
+        >Batas Atas (b)</label
+      >
+      <input
+        type="text"
+        name="b"
+        id="b"
+        class="mt-1 p-2 border w-full rounded"
+      />
+      <!-- Input untuk batas atas -->
+    </div>
+    <div>
+      <label
+        for="tol"
+        class="block text-sm font-medium text-gray-700"
+        >Toleransi Error (e)</label
+      >
+      <input
+        type="text"
+        name="tol"
+        id="tol"
+        class="mt-1 p-2 border w-full rounded"
+      />
+      <!-- Input untuk toleransi error -->
+    </div>
+    <div>
+      <label
+        for="max_iter"
+        class="block text-sm font-medium text-gray-700"
+        >Jumlah Iterasi (N)</label
+      >
+      <input
+        type="text"
+        name="max_iter"
+        id="max_iter"
+        class="mt-1 p-2 border w-full rounded"
+      />
+      <!-- Input untuk jumlah iterasi maksimum -->
+    </div>
+    <div class="col-span-2">
+      <label
+        for="f_expression"
+        class="block text-sm font-medium text-gray-700"
+        >Fungsi f(x)</label
+      >
+      <input
+        type="text"
+        name="f_expression"
+        id="f_expression"
+        class="mt-1 p-2 border w-full rounded"
+        placeholder="misalnya: math.exp(-x) - x"
+      />
+      <!-- Input untuk ekspresi fungsi f(x) -->
+    </div>
+  </div>
+  <button
+    type="submit"
+    class="bg-blue-500 text-white py-2 px-4 rounded"
+  >
+    Hitung Akar
+  </button>
+  <!-- Tombol untuk menghitung akar -->
+</form>

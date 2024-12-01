@@ -1,0 +1,17 @@
+{% extends "base.html" %} 
+
+{% block title %}Metode Eliminasi Gaus{% endblock title %}
+
+
+{% block contents %}
+    <div class='bg-purple-700 mx-4 my-8 p-4 rounded-xl'>
+        <h1 class='text-white font-bold text-center pt-3 pb-6 text-xl uppercase'>Metode Newton Raphson</h1>
+        {% include 'gaus/components/form.html' %}
+        {% if error_message %}
+            <div class="bg-purple-200 text-red-700 p-4 mb-4 rounded text-center font-semibold">{{ error_message }}</div>
+        {% endif %}
+    </div>
+    <div class="mx-10">
+    </div>
+    {% include 'gaus/components/table.html' %}
+{% endblock contents %}

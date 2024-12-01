@@ -1,0 +1,93 @@
+<form
+  method="post"
+  class="mb-6"
+>
+  {% csrf_token %}
+  <!-- Token keamanan untuk mencegah serangan CSRF -->
+  <div class="grid grid-cols-2 gap-4 mb-4">
+    <div>
+      <label
+        for="x0"
+        class="block text-sm font-medium text-white"
+        >Niali x0</label
+      >
+      <input
+        type="text"
+        name="x0"
+        id="x0"
+        value="{{ x0|default:'' }}"
+        class="mt-1 p-2 border w-full rounded outline-none border-none"
+      />
+      <!-- Input untuk nilxi x -->
+    </div>
+    <div>
+      <label
+        for="x1"
+        class="block text-sm font-medium text-white"
+        >Niali x1</label
+      >
+      <input
+        type="text"
+        name="x1"
+        id="x1"
+        value="{{ x1|default:'' }}"
+        class="mt-1 p-2 border w-full rounded outline-none border-none"
+      />
+      <!-- Input untuk toleransi error -->
+    </div>
+    <div>
+      <label
+        for="tol"
+        class="block text-sm font-medium text-white"
+        >Toleransi Error (e)</label
+      >
+      <input
+        type="text"
+        name="tol"
+        id="tol"
+        value="{{ tol|default:'' }}"
+        class="mt-1 p-2 border w-full rounded outline-none border-none"
+      />
+      <!-- Input untuk toleransi error -->
+    </div>
+    <div>
+      <label
+        for="max_iter"
+        class="block text-sm font-medium text-white"
+        >Jumlah Iterasi (N)</label
+      >
+      <input
+        type="text"
+        name="max_iter"
+        id="max_iter"
+        value="{{ max_iter|default:'' }}"
+        class="mt-1 p-2 border w-full rounded outline-none border-none"
+      />
+      <!-- Input untuk jumlah iterasi maksimum -->
+    </div>
+
+    <div class="col-span-2">
+      <label
+        for="f_expr"
+        class="block text-sm font-medium text-white"
+        >Fungsi f(x)</label
+      >
+      <input
+        type="text"
+        name="f_expr"
+        id="f_expr"
+        value="{{ f_expr|default:'' }}"
+        class="mt-1 p-2 border w-full rounded outline-none border-none"
+        placeholder="x*e^-x + cos(2*x)"
+      />
+      <!-- Input untuk ekspresi fungsi f(x) -->
+    </div>
+  </div>
+  <button
+    type="submit"
+    class="bg-purple-950 text-white py-2 px-4 rounded"
+  >
+    Hitung Akar
+  </button>
+  <!-- Tombol untuk menghitung akar -->
+</form>

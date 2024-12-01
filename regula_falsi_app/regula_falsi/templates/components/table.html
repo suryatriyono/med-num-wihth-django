@@ -1,0 +1,25 @@
+{% if result %}
+<h2 class="text-xl font-semibold mb-4">Hasil Iterasi:</h2>
+<table class="table-auto w-full bg-white shadow-md rounded">
+  <thead>
+    <tr class="bg-blue-200">
+      <th class="px-4 py-2">Iterasi</th>
+      <th class="px-4 py-2">a</th>
+      <th class="px-4 py-2">b</th>
+      <th class="px-4 py-2">xr</th>
+      <th class="px-4 py-2">f(xr)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in result %}
+    <tr class="text-center">
+      <td class="border px-4 py-2">{{ row.iteration }}</td>
+      <td class="border px-4 py-2">{{ row.a }}</td>
+      <td class="border px-4 py-2">{{ row.b }}</td>
+      <td class="border px-4 py-2">{{ row.xr }}</td>
+      <td class="border px-4 py-2">{{ row.f_xr }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}

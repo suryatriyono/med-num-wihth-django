@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link
+      rel="stylesheet"
+      href="{% static 'output.css' %}"
+    />
+  </head>
+  <body class="bg-gray-100 p-6">
+    {% include 'layouts/header.html' %}
+    <!-- Memasukkan header dari template 'header.html' -->
+
+    <main class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+      {% block content %}{% endblock %}
+      <!-- Tempat untuk konten yang akan diisi oleh halaman lain yang meng-extend 'base.html' -->
+    </main>
+
+    {% include 'layouts/footer.html' %}
+    <!-- Memasukkan footer dari template 'footer.html' -->
+  </body>
+</html>
